@@ -1,0 +1,76 @@
+.main-cont{
+    background: #fff;
+    width: 100%;
+}
+.introduce{
+    line-height: 50px;
+    border-bottom: 1px solid #f2f2f2;
+    padding-left: 20px;
+    color: #3a4155;
+    font-size: 16px;
+}
+.title{
+    padding: 0 20px;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 10px;
+}
+.title input{
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.type-box{
+    padding: 0 17px;
+    margin-bottom: 15px;
+}
+.type-box a{
+    display: inline-block;
+    font-size: 14px;
+    border:1px solid #f2f2f2;
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+
+.footer-btn{
+    border-top: 1px solid #f2f2f2;
+    padding: 20px 0;
+}
+.footer-btn a{
+    display: block;
+    width: 200px;
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 18px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    margin: 0 auto;
+}
+
+#test-editormd{
+    border: 1px solid #f2f2f2;
+}
+.CodeMirror-linenumber{
+    display: none;
+}
+.editormd-toolbar{
+    border-bottom: 1px solid #f2f2f2;
+}
+.CodeMirror-gutters{
+    display: none;
+}
+.editormd .CodeMirror pre{
+    padding: 0 12px;
+}
+.editormd .CodeMirror{
+    border: 0;
+}
+.CodeMirror-scroll{
+    overflow: hidden!important;
+    overflow-y: scroll!important;
+}

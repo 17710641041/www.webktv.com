@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/editormd.css')
+    link(rel='stylesheet', href='/stylesheets/write.css')
+    #main
+        div(class="main-cont")
+            div(class="title")
+                input(type="text" placeholder="请输入文章标题")
+            #test-editormd
+                textarea(style="display:none;" placeholder="文章标题")
+            div(class="type-box")
+                a(href="javascript:;") javaScript
+                a(href="javascript:;") HTML
+                a(href="javascript:;") CSS
+                a(href="javascript:;") nodeJS
+                a(href="javascript:;") Vue
+                a(href="javascript:;") React
+            div(class="footer-btn")
+                a(href="javascript:;") 发布
+    script(src='/js/editormd.js')
+    script(src='/js/languages/zh-tw.js')
+    script(src='/js/write.js')
+
+

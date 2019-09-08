@@ -1,0 +1,34 @@
+doctype html
+
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/head.css')
+    link(rel='stylesheet', href='/stylesheets/right.css')
+    script(src='/js/jquery.min.js')
+    script(src='/js/libs.js')
+  body
+    block head
+      #header
+        div(class="head-cont")
+          div(class="logo")
+            a(href="/")
+              img(src="/images/logo.jpg")
+          div(class="nav")
+            a(href="/") 首页
+            a(href="javascript:;") 题库
+          div(class="head-right")
+            div(class="search")
+              input(type="text" placeholder="搜索")
+              a(href="javascript:;" class="fa fa-search" aria-hidden="true")
+            div(class="notice")
+              a(href="javascript:;" class="fa fa-bell" aria-hidden="true")
+            div(class="user")
+              a(href="javascript:;" id="loginBar") 登录 / 注册
+              input(class="addBtn" type="button" value="开始创作")
+    block content
+
+    block login
+      include includes/login

@@ -1,0 +1,19 @@
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/editormd.css')
+    link(rel='stylesheet', href='/stylesheets/activity.css')
+    #main
+        div(class="main-left")
+            div(id="test-editormd-view2")
+                textarea(id="append-test" style="display:none") !{mdData}
+        include includes/right
+    script(src='/js/lib/marked.min.js')
+    script(src='/js/lib/prettify.min.js')
+    script(src='/js/lib/raphael.min.js')
+    script(src='/js/lib/underscore.min.js')
+    script(src='/js/lib/sequence-diagram.min.js')
+    script(src='/js/lib/flowchart.min.js')
+    script(src='/js/lib/jquery.flowchart.min.js')
+    script(src='/js/editormd.js')
+    script(src='/js/activity.js')
+
