@@ -15,6 +15,6 @@ const router = new Router({
 router.post('/user/create', UserController.create);
 
 //用户登录接口
-router.post('/user/login', UserController.login)
+router.post('/user/login', UserController.login);
 
-module.exports = router
+module.exports = router;
