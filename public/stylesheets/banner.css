@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+a{text-decoration: none;color: #000;outline: none;}
+h1,h2,h3,h4,h5,h6{font-size: 16px;}
+img{border: 0;}
+ul,ol {list-style:none;}
+.banner-box{overflow-x: hidden;position: relative;padding: 20px 20px 0;}
+.banner{width: 100%;height: 295px;position: relative;z-index: 1;overflow: hidden;}
+.banner img{width: 100%;}
+.banner-list{width: 100%;height: 100%;position: relative;overflow: hidden;}
+.banner-list ul{width: 100%;height: 100%;margin: 0;padding: 0;overflow: hidden;}
+.banner-list ul li{width: 100%;height: 100%;text-align: center;position: absolute;top: 0;left: 0;overflow: hidden;}
+.banner-icon{width: 96%;height: 8px;position: absolute;bottom: 10px;left: 50%;margin: 0 0 0 -48%;text-align: center;font-size: 0;overflow: hidden;}
+.banner-icon span{display: inline-block;*display: inline;*zoom: 1;width: 8px;height: 8px;-moz-border-radius: 5px;border-radius: 6px;background: #fff;margin: 0 2px;cursor: pointer;overflow: hidden;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;transition: all 0.5s;}
+.banner-icon span.active{width: 18px;}
+.btn2{width: 36px;height: 70px;position: absolute;top: 50%;margin: -35px 0 0;background: rgba(0, 0, 0, .5);font-family: '宋体';font-size: 36px;opacity: 0;filter: alpha(opacity=0);text-align: center;line-height: 70px;color: #fff;cursor: pointer;overflow: hidden;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;transition: all 0.5s;}
+.btn2.prev{left: 0;}
+.btn2.next{right: 0;}
+.banner:hover .btn2{opacity: 1;}
