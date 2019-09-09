@@ -8,6 +8,8 @@ function f() {
 f()
 ```
 
+![](upload/images/1568013229500.jpg)
+
 > sasdasdasdas
 
 ```javascript
