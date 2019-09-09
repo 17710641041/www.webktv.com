@@ -33,7 +33,41 @@
 
 .right_ad_img{
     margin-top: 15px;
+    margin-bottom: 10px;
 }
 .right_ad_img img{
     width: 100%;
+}
+.right_type{
+  background: #fff;
+  
+}
+.type-title{
+  line-height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #4a4a4a;
+  font-size: 16px;
+  border-bottom: 1px solid #dfdfdf;
+  font-weight: 500;
+}
+.type-list{
+  display: flex;
+  flex-wrap:wrap;
+}
+.type-list a{
+  display: block;
+  width: 25%;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0;
+}
+.type-list a p{
+  color: #4a4a4a;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.type-icon{
+  width: 26px;
+  height: 26px;
 }
