@@ -87,3 +87,17 @@
 .editormd-preview-container, .editormd-html-preview{
     padding: 0;
 }
+
+.activity-title{
+  color: #30384C;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.activity-info{
+  font-size: 14px;
+  margin: 15px 0;
+}
+.activity-info span{
+  margin-right: 10px;
+}
