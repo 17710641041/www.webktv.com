@@ -2,7 +2,6 @@
 const ERROR_CODE = require("../config/base");
 const common = require("../libs/common");
 
-
 class articleController {
   /**
    * 添加文章
@@ -26,4 +25,4 @@ class articleController {
   }
 }
 
-module.exports = userController;
+module.exports = articleController;

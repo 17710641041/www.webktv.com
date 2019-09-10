@@ -1,4 +1,4 @@
-var testEditor;
+var testEditor, types, title;
 
 $(function () {
   initEditor();
@@ -10,7 +10,16 @@ $(function () {
 function addSubmit () {
   $("#addSubmit").on("click", function () {
     var mdData = testEditor.getMarkdown();
-    console.log(mdData)
+    title = $("#activity-title").val()
+    console.log(title, mdData)
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/",
+    //   data: "name=John&location=Boston",
+    //   success: function (msg) {
+    //     alert("Data Saved: " + msg);
+    //   }
+    // });
   })
 }
 
@@ -31,6 +40,7 @@ function initEditor () {
   });
 }
 
+//分类切换
 function type () {
   $(".type-box>a").on("click", function () {
     $(this).addClass("type-on").siblings().removeClass("type-on")
