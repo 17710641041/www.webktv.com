@@ -74,3 +74,9 @@
     overflow: hidden!important;
     overflow-y: scroll!important;
 }
+
+
+.type-on{
+  background: #222;
+  color: #fff;
+}
