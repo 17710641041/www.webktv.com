@@ -23,8 +23,8 @@ module.exports = function (sequelize, DataTypes) {
       },
       //阅读
       read: {
-        type: DataTypes.STRING,
-        allowNull: true,
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
         field: 'read'
       },
       //文章状态 1:发布,2:未发布,3:禁用

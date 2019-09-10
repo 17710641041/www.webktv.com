@@ -1,4 +1,4 @@
-var testEditor, types, title;
+var testEditor, types = 1, title;
 
 $(function () {
   initEditor();
@@ -9,17 +9,22 @@ $(function () {
 //提交md
 function addSubmit () {
   $("#addSubmit").on("click", function () {
-    var mdData = testEditor.getMarkdown();
-    title = $("#activity-title").val()
-    console.log(title, mdData)
-    // $.ajax({
-    //   type: "POST",
-    //   url: "/",
-    //   data: "name=John&location=Boston",
-    //   success: function (msg) {
-    //     alert("Data Saved: " + msg);
-    //   }
-    // });
+    var data = {
+      title: title = $("#activity-title").val(),
+      cont: testEditor.getMarkdown(),
+      type: types,
+      username: '18600694874',
+      address: '123123321132'
+    };
+    console.log(data)
+    $.ajax({
+      type: "POST",
+      url: "/api/v1/article/add",
+      data: data,
+      success: function (msg) {
+        alert("Data Saved: " + msg);
+      }
+    });
   })
 }
 

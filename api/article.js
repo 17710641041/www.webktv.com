@@ -11,8 +11,6 @@ const router = new Router({
   prefix: '/api/v1'
 });
 
-
-
 //添加文章接口
 router.post('/article/add', articleController.add);
 

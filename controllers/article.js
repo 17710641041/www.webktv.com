@@ -1,4 +1,4 @@
-//const UserModel = require("../modules/user");
+const articleModel = require("../modules/article");
 const ERROR_CODE = require("../config/base");
 const common = require("../libs/common");
 
@@ -11,7 +11,8 @@ class articleController {
   static async add (ctx) {
     //接收客服端
     let req = ctx.request.body;
-    console.log(req);
+    //console.log("123123", req);
+    await articleModel.createArticle(req);
   }
 
   /**
@@ -19,7 +20,6 @@ class articleController {
    * @param ctx
    * @returns {Promise.<void>}
    */
-
   static async get (ctx) {
     let req = ctx.request.body;
   }
