@@ -67,9 +67,14 @@
 .user{
     float: left;
     line-height: 60px;
+    position: relative;
+    
 }
-.user a{
-    float: left;
+#loginBar{
+  float: left;
+}
+.headimgurl{
+  float: left;
 }
 .addBtn{
     float: left;
@@ -82,4 +87,31 @@
     margin-left: 24px;
     border-radius: 18px;
     margin-top: 12px;
+}
+.headimgurl{
+  padding-top: 10px;
+  display: none;
+}
+.headimgurlImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.user-info-list{
+  position: absolute;
+  bottom: -110px;
+  left: -25px;
+  background: #fff;
+  padding: 0 20px;
+  border:1px solid #f0f0f0;
+  display: none;
+}
+.user-info-items{
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px dashed #f0f0f0;
+}
+.user-info-items:last-child{
+  border-bottom:0;
 }

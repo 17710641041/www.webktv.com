@@ -1,6 +1,4 @@
 const Sequelize = require('sequelize');
-const Redis = require('ioredis');
-
 const config = require('./config');
 //mysql 连接地址
 const sequelize = new Sequelize(config.dbName, config.dbUserName, config.dbUserPwd, {
