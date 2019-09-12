@@ -22,7 +22,7 @@ function addSubmit () {
       url: "/api/v1/article/add",
       data: data,
       success: function (msg) {
-        alert("Data Saved: " + msg);
+        console.log("Data Saved: " + msg);
       }
     });
   })
