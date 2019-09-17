@@ -12,13 +12,13 @@ module.exports = function (sequelize, DataTypes) {
       //标题
       title: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         field: 'title'
       },
       //作者
       author: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         field: 'author'
       },
       //阅读
@@ -36,17 +36,21 @@ module.exports = function (sequelize, DataTypes) {
       //文章地址
       address: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         field: 'address'
       },
       //文章分类
       type: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
         field: 'type'
       },
       // 创建时间
       createdAt: {
+        type: DataTypes.DATE
+      },
+      // 更新时间
+      updatedAt: {
         type: DataTypes.DATE
       }
     },

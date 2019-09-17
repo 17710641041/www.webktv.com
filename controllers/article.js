@@ -11,23 +11,26 @@ class articleController {
    * @returns {Promise.<void>}
    */
   static async add (ctx) {
-    //接收客服端
+    //接收客户端
     let req = ctx.request.body;
+    //文件名称
     let fileName = new Date().getTime();
-    console.log()
+    req.address = fileName;
     await new Promise((resolve, reject) => { // 读image文件夹
-      fs.writeFile('./public/upload/md/' + fileName + '.md', '大家好，我是写入文件，哈哈', function (error) {
+      fs.writeFile('./public/upload/md/' + fileName + '.md', req.cont, function (error) {
         if (error) {
-          console.log('写入失败');
-          return false;
+          //console.log('写入失败');
+          ctx.body = common.http_response_fun(2001, ERROR_CODE['2001'], error)
         }
         //console.log('写入成功');
         resolve()
       })
     })
-    ctx.body = { "code": 200, name: "成功" }
-    //数据库写入
-    //await articleModel.createArticle(req);
+    //插入数据库
+    await articleModel.createArticle(req);
+
+    ctx.body = common.http_response_fun(200, ERROR_CODE['200'])
+
   }
 
   /**

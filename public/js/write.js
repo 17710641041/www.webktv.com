@@ -13,7 +13,7 @@ function addSubmit () {
       title: title = $("#activity-title").val(),
       cont: testEditor.getMarkdown(),
       type: types,
-      username: '18600694874',
+      author: '18600694874',
       address: '123123321132'
     };
     console.log(data)
