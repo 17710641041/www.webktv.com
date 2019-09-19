@@ -46,6 +46,7 @@ li{list-style: none}
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin-bottom: 15px;
 }
 .list-items-cont{
     overflow: hidden;
@@ -54,6 +55,7 @@ li{list-style: none}
     font-size: 14px;
     color: #989CA8;
     margin: 10px 0;
+    display: none;
 }
 .users{
     display: flex;
@@ -77,3 +79,10 @@ li{list-style: none}
     margin: 20px;
 }
 
+.list-footer{
+  text-align: center;
+  display: none;
+}
+.list-footer img{
+  width: 40px;
+}

@@ -26,12 +26,20 @@ class articleModel {
 
   /**
    * 查询文章模型
-   * @param username 用户
+   * @param id 文章id
    * @returns {Promise<Model>}
    */
-  static async getUserDetail (username) {
-    return await user.findOne({
-      where: { username }
+  static async getArticleDetail (id) {
+    return await article.findOne({
+      where: { id }
+    });
+  }
+
+  static async getAllArticleDetail (currentPage, count) {
+    let offset = (currentPage - 1) * count;
+    return await article.findAndCountAll({
+      limit: parseInt(count),
+      offset
     });
   }
 }
