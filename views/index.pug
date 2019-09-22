@@ -8,10 +8,11 @@ block content
         include includes/banner
       div(class="nav-bar")
         ul(class="nav-ul")
-          li(class="nav-items") WebKTV
-          //- li(class="nav-items")
-          //-   a(href="javascript:;") 推荐
-          //-   a(href="javascript:;") 热榜
+          li(class="nav-items") 
+            a(href="javascript:;") 全部
+          li(class="nav-items")
+            - for (var i = 0; i < types.length; i++)
+              a(href="javascript:;") #{types[i].name}
       div(class="list")
         - for (var i = 0; i < datas.length; i++)
           a(class="list-items" href="/activity?id=" + datas[i].address)

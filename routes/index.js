@@ -3,11 +3,13 @@ const path = require("path");
 const router = require('koa-router')()
 
 const articleModel = require("../modules/article");
+const typesModel = require("../modules/types");
 
 //首页
 router.get('/', async (ctx, next) => {
+  let typeData = await typesModel.getTypeAll();
   let listData = await articleModel.getAllArticleDetail(1, 10);
-  await ctx.render('index', { title: '前端俱乐部', datas: listData })
+  await ctx.render('index', { title: '前端俱乐部', datas: listData, types: typeData })
 })
 
 //文章详情
@@ -28,7 +30,8 @@ router.get('/activity', async (ctx, next) => {
 
 //添加文章
 router.get('/write', async (ctx, next) => {
-  await ctx.render('write', { title: '发布文章' })
+  let typeData = await typesModel.getTypeAll();
+  await ctx.render('write', { title: '发布文章', types: typeData })
 })
 
 router.get('/json', async (ctx, next) => {

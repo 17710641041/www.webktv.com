@@ -10,12 +10,9 @@ block content
             #test-editormd
                 textarea(style="display:none;" placeholder="文章标题")
             div(class="type-box")
-                a(href="javascript:;" class="type-on") javaScript
-                a(href="javascript:;") HTML
-                a(href="javascript:;") CSS
-                a(href="javascript:;") nodeJS
-                a(href="javascript:;") Vue
-                a(href="javascript:;") React
+              - for (var i = 0; i < types.length; i++)
+                //a(href="javascript:;" class="type-on") javaScript
+                a(href="javascript:;" typeid=types[i].id) #{types[i].name}
             div(class="footer-btn")
                 a(href="javascript:;" id="addSubmit") 发布
     script(src='/js/editormd.js')
