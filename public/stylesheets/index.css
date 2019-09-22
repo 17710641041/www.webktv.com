@@ -86,3 +86,11 @@ li{list-style: none}
 .list-footer img{
   width: 40px;
 }
+.name{
+  margin-right: 10px;
+  float: left;
+  line-height: 20px;
+}
+.num span{
+  margin-left: 5px;
+}

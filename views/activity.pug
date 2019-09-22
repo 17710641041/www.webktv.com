@@ -5,11 +5,11 @@ block content
     #main
         div(class="main-left")
             div(class="activity-title")
-              p(class="title") 【数字图像处理】灰度直方图、直方图均衡【数字图像处理】灰度直方图、直方图均衡化、直方图规定化化、直方图规定化
+              p(class="title") #{datas.title}
               p(class="activity-info") 
-                span 作者：一个好人
-                span 阅读：1032
-                span 时间：2019-09-10
+                span 作者：#{datas.u.nickname}
+                span 阅读：#{datas.read}
+                span 时间：#{datas.createdAt}
             div(id="test-editormd-view2")
                 textarea(id="append-test" style="display:none") !{mdData}
         include includes/right

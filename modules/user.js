@@ -1,13 +1,8 @@
-// 引入mysql的配置文件
-const db = require('../config/db');
 
-// 引入sequelize对象
-const Sequelize = db.sequelize;
 
 // 引入数据表模型
-const user = Sequelize.import('../schema/user');
+const user = require("../schema/user");
 user.sync({ force: false }); //自动创建表
-
 
 class UserModel {
   /**

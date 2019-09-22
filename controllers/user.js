@@ -3,7 +3,7 @@ const uuid = require('node-uuid');
 const UserModel = require("../modules/user");
 const ERROR_CODE = require("../config/base");
 const common = require("../libs/common");
-const redis = require("../config/redis")
+//const redis = require("../config/redis")
 // const client = redis.createClient(6379, 'localhost');
 
 class userController {
@@ -55,7 +55,7 @@ class userController {
           var datas = data.dataValues;
           delete datas.password;
           var uid = uuid.v1().split("-").join('');
-          redis.set(uid, JSON.stringify(datas))
+          //redis.set(uid, JSON.stringify(datas))
           datas.token = uid;
           ctx.body = common.http_response_fun(200, ERROR_CODE['200'], datas)
         }

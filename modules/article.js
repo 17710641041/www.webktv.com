@@ -1,11 +1,7 @@
-// 引入mysql的配置文件
-const db = require('../config/db');
-
-// 引入sequelize对象
-const Sequelize = db.sequelize;
 
 // 引入数据表模型
-const article = Sequelize.import('../schema/article');
+const article = require('../schema/article');
+const user = require('../schema/user');
 article.sync({ force: false }); //自动创建表
 
 
@@ -29,18 +25,34 @@ class articleModel {
    * @param id 文章id
    * @returns {Promise<Model>}
    */
-  static async getArticleDetail (id) {
+  static async getArticleDetail (address) {
     return await article.findOne({
-      where: { id }
+      where: { address },
+      include: [{
+        model: user,
+        as: 'u',
+        attributes: ['nickname']
+      }],
     });
   }
 
   static async getAllArticleDetail (currentPage, count) {
-    let offset = (currentPage - 1) * count;
-    return await article.findAndCountAll({
-      limit: parseInt(count),
-      offset
-    });
+
+    return await article.findAll({
+      //attributes: ['author'],
+      order: [['id', 'DESC']],
+      include: [{
+        model: user,
+        as: 'u',
+        attributes: ['nickname']
+      }],
+    })
+    // let offset = (currentPage - 1) * count;
+    // return await article.findAndCountAll({
+    //   limit: parseInt(count),
+    //   offset
+    // });
+
   }
 }
 

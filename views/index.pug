@@ -8,21 +8,22 @@ block content
         include includes/banner
       div(class="nav-bar")
         ul(class="nav-ul")
-          //- li(class="nav-items") WebKtv
-          li(class="nav-items")
-            a(href="javascript:;") 推荐
-            a(href="javascript:;") 热榜
+          li(class="nav-items") WebKTV
+          //- li(class="nav-items")
+          //-   a(href="javascript:;") 推荐
+          //-   a(href="javascript:;") 热榜
       div(class="list")
-        - for (var i = 0; i < datas.rows.length; i++)
-          a(class="list-items" href="/activity")
-            div(class="list-items-title")=datas.rows[i].title
+        - for (var i = 0; i < datas.length; i++)
+          a(class="list-items" href="/activity?id=" + datas[i].address)
+            div(class="list-items-title")=datas[i].title
             div(class="list-items-cont") 本文是作者结合 2019 年 7 月 12 ArchSummit 全球架07 月 12 日在 ArchSummit 全球架构师峰会 DDD（领域驱动设计）落地探索专场做的主题分享：
             div(class="list-items-foot")
               div(class="users")
                 div(class="user-info")
-                  img(class="tx" src="https://images.gitbook.cn/5fc50690-fae6-11e8-ab18-77ed659f89ef?imageView2/2/h/220")
-                  span(class="name") 韩冰玉 · 后端leader，专注系统分析与应用架构
-                div(class="num") 4398 阅读
+                  //img(class="tx" src="https://images.gitbook.cn/5fc50690-fae6-11e8-ab18-77ed659f89ef?imageView2/2/h/220")
+                  span(class="name") 作者: #{datas[i].u.nickname}
+                  span(class="name") 时间: #{datas[i].createdAt}
+                div(class="num") 阅读 #{datas[i].read}
         div(class="list-footer")
           img(src="/images/jz.gif")
     include includes/right

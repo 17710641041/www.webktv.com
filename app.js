@@ -10,7 +10,7 @@ const cors = require('koa-cors')
 const index = require('./routes/index')
 const upload = require('./api/uploads')
 const article = require('./api/article')
-//const user = require('./api/user')
+const user = require('./api/user')
 
 // error handler
 onerror(app)
@@ -40,7 +40,7 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(upload.routes(), upload.allowedMethods())
 app.use(article.routes(), article.allowedMethods())
-//app.use(user.routes(), user.allowedMethods())
+app.use(user.routes(), user.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
