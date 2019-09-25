@@ -15,8 +15,7 @@ var User = sequelize.define('user',
     phone: {
       type: Sequelize.STRING,
       allowNull: true,
-      field: 'phone',
-      primaryKey: true
+      field: 'phone'
     },
     //用户名
     username: {

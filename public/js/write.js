@@ -13,10 +13,8 @@ function addSubmit () {
       title: title = $("#activity-title").val(),
       cont: testEditor.getMarkdown(),
       type: types,
-      author: '18600694874',
-      address: '123123321132'
+      author: '18600694874'
     };
-    console.log(data)
     $.ajax({
       type: "POST",
       url: "/api/v1/article/add",

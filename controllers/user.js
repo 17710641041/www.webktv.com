@@ -1,10 +1,9 @@
-const uuid = require('node-uuid');
+
 
 const UserModel = require("../modules/user");
 const ERROR_CODE = require("../config/base");
 const common = require("../libs/common");
-//const redis = require("../config/redis")
-// const client = redis.createClient(6379, 'localhost');
+const JwtUtil = require("../libs/jwt");
 
 class userController {
   /**
@@ -15,8 +14,8 @@ class userController {
   static async create (ctx) {
     //接收客服端
     let req = ctx.request.body;
-    //let token = await common.createToken(req.username);
-    if (req.username && req.password) {
+
+    if (req.phone && req.password) {
       try {
         //查询用户是否存在
         const data = await UserModel.getUserDetail(req.username);
@@ -52,14 +51,16 @@ class userController {
         } else if (data.password != req.password) {
           ctx.body = ctx.body = common.http_response_fun(1001, ERROR_CODE['1001'])
         } else {
-          var datas = data.dataValues;
+          let datas = data.dataValues;
           delete datas.password;
-          var uid = uuid.v1().split("-").join('');
-          //redis.set(uid, JSON.stringify(datas))
-          datas.token = uid;
+          let id = datas.username
+          let jwt = new JwtUtil(id);
+          let token = jwt.generateToken();
+          datas.token = token;
           ctx.body = common.http_response_fun(200, ERROR_CODE['200'], datas)
         }
       } catch (err) {
+        console.log(err)
         ctx.body = common.http_response_fun(1003, ERROR_CODE['1003'])
       }
     } else {

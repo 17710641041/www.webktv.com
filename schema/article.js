@@ -82,6 +82,6 @@ const Article = sequelize.define('article',
   }
 );
 
-Article.belongsTo(user, { foreignKey: 'author', targetKey: 'phone', as: 'u' });
+Article.belongsTo(user, { foreignKey: 'author', targetKey: 'username', as: 'u' });
 
 module.exports = Article;
