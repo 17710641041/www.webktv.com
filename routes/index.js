@@ -7,13 +7,16 @@ const typesModel = require("../modules/types");
 
 //首页
 router.get('/', async (ctx, next) => {
+  let user = ctx.session.user || '';
   let typeData = await typesModel.getTypeAll();
   let listData = await articleModel.getAllArticleDetail(1, 10);
-  await ctx.render('index', { title: '前端俱乐部', datas: listData, types: typeData })
+  await ctx.render('index', { title: '前端俱乐部', datas: listData, types: typeData, user: user })
+
 })
 
 //文章详情
 router.get('/activity', async (ctx, next) => {
+  let user = ctx.session.user || '';
   let id = ctx.request.query.id;
   let mdData = '';
   let listData = await articleModel.getArticleDetail(id);
@@ -25,13 +28,14 @@ router.get('/activity', async (ctx, next) => {
       resolve()
     });
   });
-  await ctx.render('activity', { title: '详情页面', mdData: mdData, datas: listData })
+  await ctx.render('activity', { title: '详情页面', mdData: mdData, datas: listData, user: user })
 })
 
 //添加文章
 router.get('/write', async (ctx, next) => {
+  let user = ctx.session.user || '';
   let typeData = await typesModel.getTypeAll();
-  await ctx.render('write', { title: '发布文章', types: typeData })
+  await ctx.render('write', { title: '发布文章', types: typeData, user: user })
 })
 
 router.get('/json', async (ctx, next) => {

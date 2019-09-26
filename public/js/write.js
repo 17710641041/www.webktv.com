@@ -1,4 +1,4 @@
-var testEditor, types = 1, title;
+var testEditor, types = '', title;
 
 $(function () {
   initEditor();
@@ -9,18 +9,35 @@ $(function () {
 //提交md
 function addSubmit () {
   $("#addSubmit").on("click", function () {
+    if ($("#activity-title").val() == '') {
+      alert("标题不能为空")
+      return false;
+    }
+    if (testEditor.getMarkdown() == '') {
+      alert("内容不能为空")
+      return false;
+    }
+    if (types == '') {
+      alert("分类不能为空")
+      return false;
+    }
     var data = {
       title: title = $("#activity-title").val(),
       cont: testEditor.getMarkdown(),
       type: types,
-      author: '18600694874'
     };
     $.ajax({
       type: "POST",
       url: "/api/v1/article/add",
       data: data,
       success: function (msg) {
-        console.log("Data Saved: " + msg);
+        console.log(msg);
+        if (msg.code == 200) {
+          alert("发布成功");
+          location.reload();
+        } else {
+          alert(msg.msg)
+        }
       }
     });
   })
@@ -46,6 +63,7 @@ function initEditor () {
 //分类切换
 function type () {
   $(".type-box>a").on("click", function () {
-    $(this).addClass("type-on").siblings().removeClass("type-on")
+    $(this).addClass("type-on").siblings().removeClass("type-on");
+    types = $(this).attr("typeid")
   })
 }

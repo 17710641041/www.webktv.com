@@ -13,11 +13,11 @@ const config = {
 const sequelize = new Sequelize(config.dbName, config.dbUserName, config.dbUserPwd, {
   host: config.dbAddress,
   dialect: 'mysql',
-  operatorsAliases: false,
+  //operatorsAliases: false,
   dialectOptions: {
     //字符集
     charset: 'utf8mb4',
-    collate: 'utf8mb4_unicode_ci',
+    //collate: 'utf8mb4_unicode_ci',
     supportBigNumbers: true,
     bigNumberStrings: true
   },

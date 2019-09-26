@@ -36,8 +36,7 @@ function postFrom () {
       data: data,
       success: function (msg) {
         if (msg.code == 200) {
-          $("#login").hide();
-          localStorage.setItem('userInfo', JSON.stringify(msg.data));
+          location.reload();
         } else {
           alert(msg.msg)
         }

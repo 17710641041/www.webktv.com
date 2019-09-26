@@ -90,7 +90,6 @@
 }
 .headimgurl{
   padding-top: 10px;
-  display: none;
 }
 .headimgurlImg{
   width: 40px;
@@ -98,6 +97,7 @@
   border-radius: 50%;
 }
 .user-info-list{
+  width: 64px;
   position: absolute;
   bottom: -110px;
   left: -25px;

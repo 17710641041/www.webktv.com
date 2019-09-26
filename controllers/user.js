@@ -3,7 +3,7 @@
 const UserModel = require("../modules/user");
 const ERROR_CODE = require("../config/base");
 const common = require("../libs/common");
-const JwtUtil = require("../libs/jwt");
+
 
 class userController {
   /**
@@ -53,11 +53,8 @@ class userController {
         } else {
           let datas = data.dataValues;
           delete datas.password;
-          let id = datas.username
-          let jwt = new JwtUtil(id);
-          let token = jwt.generateToken();
-          datas.token = token;
-          ctx.body = common.http_response_fun(200, ERROR_CODE['200'], datas)
+          ctx.session.user = datas;
+          ctx.body = common.http_response_fun(200, ERROR_CODE['200'])
         }
       } catch (err) {
         console.log(err)

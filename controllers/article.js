@@ -15,7 +15,9 @@ class articleController {
     let req = ctx.request.body;
     //文件名称
     let fileName = new Date().getTime();
+    let user = ctx.session.user || '';
     req.address = fileName;
+    req.author = user.username;
     await new Promise((resolve, reject) => { // 读image文件夹
       fs.writeFile('./public/upload/md/' + fileName + '.md', req.cont, function (error) {
         if (error) {
