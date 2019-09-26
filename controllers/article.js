@@ -40,9 +40,11 @@ class articleController {
    * @param ctx
    * @returns {Promise.<void>}
    */
-  static async getList (ctx) {
-    let req = ctx.request.body;
-    //await articleModel.getAllArticleDetail(1, 10)
+  static async get (ctx) {
+    let req = ctx.request.query;
+    console.log("123123123", req)
+    const data = await articleModel.getAllArticleDetail(req.index, 10);
+    ctx.body = data;
   }
 }
 

@@ -11,7 +11,6 @@ class typeController {
   static async create (ctx) {
     //接收客服端
     let req = ctx.request.body;
-    //let token = await common.createToken(req.username);
     if (req.name) {
       try {
         //查询用户是否存在

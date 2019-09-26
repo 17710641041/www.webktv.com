@@ -37,7 +37,7 @@ class articleModel {
   }
 
   static async getAllArticleDetail (currentPage, count) {
-
+    let offset = (currentPage - 1) * count;
     return await article.findAll({
       //attributes: ['author'],
       order: [['id', 'DESC']],
@@ -46,8 +46,10 @@ class articleModel {
         as: 'u',
         attributes: ['nickname']
       }],
+      limit: parseInt(count),
+      offset
     })
-    // let offset = (currentPage - 1) * count;
+    // 
     // return await article.findAndCountAll({
     //   limit: parseInt(count),
     //   offset

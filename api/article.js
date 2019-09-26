@@ -14,4 +14,7 @@ const router = new Router({
 //添加文章接口
 router.post('/article/add', articleController.add);
 
+//查询列表文章接口
+router.get('/article/get', articleController.get);
+
 module.exports = router;
