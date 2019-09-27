@@ -21,12 +21,13 @@ block content
             div(class="list-items-foot")
               div(class="users")
                 div(class="user-info")
-                  //img(class="tx" src="https://images.gitbook.cn/5fc50690-fae6-11e8-ab18-77ed659f89ef?imageView2/2/h/220")
+                  //img(class="tx" src="")
                   span(class="name") 作者: #{datas[i].u.nickname}
                   span(class="name") 时间: #{datas[i].createdAt}
                   //div(class="num") 阅读 #{datas[i].read}
-        div(class="list-footer")
-          img(src="/images/jz.gif")
+      div(class="list-footer")
+        img(class="jzIcon" src="/images/jz.gif")
+        span(class="jzTexe") 已加载全部内容！！！
     include includes/right
   script(src='/js/index.js')
   script(src='/js/head.js')
