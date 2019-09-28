@@ -43,7 +43,7 @@ router.get('/write', async (ctx, next) => {
 router.get("/activity/:name", async (ctx) => {
   const data = await typeModel.getTypeDetail(ctx.params.name);
   let listData = await articleModel.getTypeArticleDetail(1, 10, data.id);
-  await ctx.render('typelist', { title: ctx.params.name + '前端俱乐部', data: listData })
+  await ctx.render('typelist', { title: ctx.params.name + '前端俱乐部', data: listData, name: ctx.params.name })
 });
 
 router.get('/json', async (ctx, next) => {
