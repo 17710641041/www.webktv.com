@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/typelist.css')
+  #main
+    div(class="main-left")
+      div(class="list")  
+        - for (var i = 0; i < data.length; i++)
+          a(class="list-items" href="/activity?id=" + data[i].address)
+            div(class="list-items-title")=data[i].title
+            div(class="list-items-cont") 本文是作者结合 2019 年 7 月 12 ArchSummit 全球架07 月 12 日在 ArchSummit 全球架构师峰会 DDD（领域驱动设计）落地探索专场做的主题分享：
+            div(class="list-items-foot")
+              div(class="users")
+                div(class="user-info")
+                  span(class="name") 作者: #{data[i].u.nickname}
+                  span(class="name") 时间: #{data[i].createdAt}
+                  //div(class="num") 阅读 #{data[i].read}
+      //div(class="list-footer")
+        img(class="jzIcon" src="/images/jz.gif")
+        span(class="jzTexe") 已加载全部内容！！！
+    include includes/right
+  script(src='/js/index.js')
+  script(src='/js/head.js')

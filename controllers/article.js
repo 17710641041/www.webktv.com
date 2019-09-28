@@ -42,7 +42,6 @@ class articleController {
    */
   static async get (ctx) {
     let req = ctx.request.query;
-    console.log("123123123", req)
     const data = await articleModel.getAllArticleDetail(req.index, 10);
     ctx.body = data;
   }

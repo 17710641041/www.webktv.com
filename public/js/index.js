@@ -36,6 +36,7 @@ $(window).scroll(function () {
                 </div>
               </a>
             `
+
           }
           $(".list").append(str);
           $(".jzIcon").hide();

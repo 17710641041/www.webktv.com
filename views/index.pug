@@ -12,7 +12,7 @@ block content
             a(href="javascript:;") 全部
           li(class="nav-items")
             - for (var i = 0; i < types.length; i++)
-              a(href="javascript:;") #{types[i].name}
+              a(href="/activity/"+types[i].name) #{types[i].name}
       div(class="list")
         - for (var i = 0; i < datas.length; i++)
           a(class="list-items" href="/activity?id=" + datas[i].address)

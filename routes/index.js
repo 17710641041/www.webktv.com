@@ -2,11 +2,13 @@ const fs = require("fs");
 const path = require("path");
 const router = require('koa-router')()
 
+const typeModel = require("../modules/types");
 const articleModel = require("../modules/article");
 const typesModel = require("../modules/types");
 
 //首页
 router.get('/', async (ctx, next) => {
+
   let user = ctx.session.user || '';
   let typeData = await typesModel.getTypeAll();
   let listData = await articleModel.getAllArticleDetail(1, 10);
@@ -37,6 +39,12 @@ router.get('/write', async (ctx, next) => {
   let typeData = await typesModel.getTypeAll();
   await ctx.render('write', { title: '发布文章', types: typeData, user: user })
 })
+
+router.get("/activity/:name", async (ctx) => {
+  const data = await typeModel.getTypeDetail(ctx.params.name);
+  let listData = await articleModel.getTypeArticleDetail(1, 10, data.id);
+  await ctx.render('typelist', { title: ctx.params.name + '前端俱乐部', data: listData })
+});
 
 router.get('/json', async (ctx, next) => {
   ctx.body = {

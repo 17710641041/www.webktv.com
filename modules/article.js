@@ -49,13 +49,25 @@ class articleModel {
       limit: parseInt(count),
       offset
     })
-    // 
-    // return await article.findAndCountAll({
-    //   limit: parseInt(count),
-    //   offset
-    // });
-
   }
+
+  static async getTypeArticleDetail (currentPage, count, typeTxt) {
+    let offset = (currentPage - 1) * count;
+    return await article.findAll({
+      where: {
+        type: typeTxt,
+      },
+      order: [['id', 'DESC']],
+      include: [{
+        model: user,
+        as: 'u',
+        attributes: ['nickname']
+      }],
+      limit: parseInt(count),
+      offset
+    })
+  }
+
 }
 
 module.exports = articleModel;

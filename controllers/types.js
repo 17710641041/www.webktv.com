@@ -13,7 +13,6 @@ class typeController {
     let req = ctx.request.body;
     if (req.name) {
       try {
-        //查询用户是否存在
         const data = await typeModel.getTypeDetail(req.name);
         if (data == null) {
           await typeModel.createType(req);
