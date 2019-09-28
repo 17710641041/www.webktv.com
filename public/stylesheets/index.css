@@ -1,7 +1,6 @@
 li{list-style: none}
 .main-left{
     flex: 1;
-    min-height: 600px;
     background: #fff;
     width: 0;
 }
@@ -27,6 +26,10 @@ li{list-style: none}
     font-size: 14px;
     color: #666;
     font-weight: 300;
+}
+
+.nav-items a:hover{
+  color: #000;
 }
 
 .list-items{
@@ -95,4 +98,13 @@ li{list-style: none}
 }
 .num span{
   margin-left: 5px;
+}
+.jzIcon{
+  cursor:pointer;
+}
+.jzIcon:hover{
+  color: #007AFF;
+}
+.jzTexe{
+  display: none;
 }

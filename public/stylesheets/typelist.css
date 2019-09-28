@@ -1,7 +1,6 @@
 li{list-style: none}
 .main-left{
     flex: 1;
-    min-height: 600px;
     background: #fff;
     width: 0;
 }
