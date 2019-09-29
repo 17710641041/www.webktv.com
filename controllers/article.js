@@ -43,7 +43,7 @@ class articleController {
   static async get (ctx) {
     let req = ctx.request.query;
     const data = await articleModel.getAllArticleDetail(req.index, 10);
-    ctx.body = data;
+    ctx.body = common.http_response_fun(200, ERROR_CODE['200'], data);
   }
 }
 

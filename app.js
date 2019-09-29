@@ -22,8 +22,8 @@ app.use(cors())
 
 app.keys = ['4eb3979f06ed4106af01bd7593b1a072'];
 app.use(session({
-  key: 'koa:sess',
-  maxAge: 7200000, /** 2个小时 */
+  key: 'webktv',
+  //maxAge: 7200000, /** 2个小时 */
   overwrite: true,
   httpOnly: true,
   signed: true,

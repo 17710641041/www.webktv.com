@@ -4,7 +4,10 @@ div(class="main-right")
         div(class="publish_title")
             p 写点什么...
             p 成为创作者，发布内容
-        a(class="publish_btn" href="/write") 开始创作
+        if user
+          a(class="publish_btn" href="/write") 开始创作
+        else
+          a(id="pubBtn" class="publish_btn" href="javascript:;") 开始创作
     div(class="right_ad_img")
         img(src="/images/ewm.jpg")
     //- div(class="right_type")
