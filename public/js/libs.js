@@ -3,8 +3,28 @@ $(function () {
   showHideLogin()
   tabsLogin()
   fb()
-
+  tx()
+  logoutFun()
 });
+
+function logoutFun () {
+  $("#logout").on("click", function () {
+    $.ajax({
+      type: "get",
+      url: "/api/v1/user/logout",
+      data: '',
+      success: function (msg) {
+        location.reload();
+      }
+    });
+  })
+}
+
+function tx () {
+  $(".headimgurlImg").on("click", function () {
+    $(".user-info-list").toggle();
+  })
+}
 
 //登录模板显示/隐藏
 function showHideLogin () {
