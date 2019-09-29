@@ -11,7 +11,7 @@ const router = new Router({
   prefix: '/api/v1'
 });
 
-//创建用户接口
+//创建
 router.post('/types/add', typeController.create);
 
 //用户登录接口
