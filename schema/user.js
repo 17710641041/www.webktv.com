@@ -1,7 +1,7 @@
 
 var Sequelize = require('sequelize');
 const sequelize = require('../config/db');
-
+const moment = require('moment');
 var User = sequelize.define('user',
   {
     //用户id
@@ -55,11 +55,21 @@ var User = sequelize.define('user',
     },
     // 创建时间
     createdAt: {
-      type: Sequelize.DATE
+      type: 'TIMESTAMP',
+      allowNull: false,
+      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      get () {
+        return moment(this.getDataValue('createdAt')).format('YYYY-MM-DD');
+      }
     },
     // 更新时间
     updatedAt: {
-      type: Sequelize.DATE
+      type: 'TIMESTAMP',
+      allowNull: false,
+      defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      get () {
+        return moment(this.getDataValue('createdAt')).format('YYYY-MM-DD');
+      }
     }
   },
   {

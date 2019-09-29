@@ -3,7 +3,7 @@
 const UserModel = require("../modules/user");
 const ERROR_CODE = require("../config/base");
 const common = require("../libs/common");
-
+const md5 = require('md5-node');
 
 class userController {
   /**
@@ -15,12 +15,14 @@ class userController {
     //接收客服端
     let req = ctx.request.body;
 
-    if (req.phone && req.password) {
+    if (req.username && req.password) {
       try {
         //查询用户是否存在
+
         const data = await UserModel.getUserDetail(req.username);
         if (data == null) {
           //创建用户模型
+          req.password = md5(req.password)
           await UserModel.createUser(req);
           ctx.body = common.http_response_fun(200, ERROR_CODE['200'])
         } else {
@@ -45,6 +47,7 @@ class userController {
     if (req.username && req.password) {
       try {
         // 查询用户详情模型
+        req.password = md5(req.password)
         let data = await UserModel.getUserDetail(req.username);
         if (data == null) {
           ctx.body = ctx.body = common.http_response_fun(1002, ERROR_CODE['1002'])
