@@ -15,7 +15,7 @@ class UserModel {
       username: data.username,      //用户名
       password: data.password,       //密码
       phone: '',
-      nickname: '',
+      nickname: '游客',
       headimgurl: ''
     });
   }
